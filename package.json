@@ -1,0 +1,14 @@
+{
+  "name": "notifications_firebase",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/GregoriSimei/notifications_firebase.git",
+  "author": "GregoriSimei <gregorisimei@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.13"
+  }
+}
