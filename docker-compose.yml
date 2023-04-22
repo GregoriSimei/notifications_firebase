@@ -1,0 +1,26 @@
+services:
+  app:
+    container_name: notification_firebase_backend
+    image: node:16
+    env_file:
+      - ./.env
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    command: 'yarn dev'
+    volumes:
+      - .:/app/node
+    working_dir: /app/node
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: notification_firebase_database
+    image: postgres
+    env_file:
+      - ./.env
+    ports:
+      - "${DB_PORT}:5432"
+    environment: 
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
