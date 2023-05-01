@@ -1,6 +1,9 @@
-import { app } from './infrastructure/config/app';
-import { APP_PORT } from './infrastructure/config/server';
+import { dbInitializer } from './infrastructure/persistence/dbInitializer';
 
-app.listen(APP_PORT, () => {
-  console.log(`App runing ${APP_PORT}`);
-});
+dbInitializer()
+  .then(() => {
+    console.log('DB Connected');
+  })
+  .catch(() => {
+    console.log('Error to init DB');
+  });
